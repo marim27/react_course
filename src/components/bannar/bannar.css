@@ -1,0 +1,10 @@
+#darkImg{
+    background: url("../../../public/images/dark.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 20rem;
+    border-radius: 1%; 
+}
+
+
+/* style={{backgroundImage:`url(https://image.tmdb.org/t/p/w500/${product.poster_path})`,backgroundSize: 'cover',backgroundRepeat:'no-repeat'}} */

@@ -1,0 +1,29 @@
+ <div className="container mt-5" dir={`${lang=='en'?'ltr':'rtl'}`}>
+      <LangProvider value={{lang, setLang}}>
+      <Header />
+<Routes>
+<Route path="/" element={<Home/>} title='Home'></Route>
+<Route path="/project" element={<Project/>}  title='Home'/>
+<Route path="/about" element={<AboutUs/>}></Route>
+
+{/* <Route path="/favorites" element={<Favorites/>}/> */}
+{/* Guarded  Route*/}
+<Route path="/favorites" element={
+  <Guard isLogin={isLogin}>
+  <Favorites/>
+  </Guard>}/>
+
+ {/* nested routes */}
+<Route path="/contact" element={<ContactUs/>}>
+  <Route index element={<LogIn/>}/>
+  <Route Route path="login" element={<LogIn/>}/>
+  <Route Route path="register" element={<Register/>}/>
+</Route>
+<Route path="/details/:id" element={<SinglePage/>}></Route>
+<Route path="/Search" element={<SearchMovies/>}></Route>
+<Route path="*" element={<NotFound/>}></Route>
+
+</Routes>
+      <Footer />
+      </LangProvider>
+    </div>
